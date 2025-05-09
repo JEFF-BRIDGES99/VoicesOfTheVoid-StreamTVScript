@@ -63,7 +63,7 @@ function Update-Placeholders {
 
         # Use Start-Process for the copy operation to run it asynchronously, compatible with non-Windows PowerShell
         $ffmpegCopyArgs = '-y', '-i', $TEMP_FILE, $OUTPUT_FILE
-        Start-Process -FilePath "ffmpeg" -ArgumentList $ffmpegCopyArgs
+        Start-Process -FilePath "ffmpeg" -ArgumentList $ffmpegCopyArgs -NoNewWindow
 
         $segmentNumber++
         if ($segmentNumber -gt $PLACEHOLDER_COUNT) {
